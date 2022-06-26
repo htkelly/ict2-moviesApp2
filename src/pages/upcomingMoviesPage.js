@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 import { getUpcomingMovies } from "../api/tmdb-api";
 import PageTemplate from '../components/templateMovieListPage'
 
@@ -20,7 +21,9 @@ const UpcomingMoviesPage = (props) => {
     <PageTemplate
       title='Upcoming Movies'
       movies={movies}
-      action={addToFavourites}
+      action={(movie) => {
+        return <PlaylistAddIcon movie={movie} color="primary" />
+      }}
     />
   );
 };
