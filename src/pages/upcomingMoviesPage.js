@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from 'react-query';
-import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
+import AddToMustWatchIcon from "../components/cardIcons/addToMustWatch";
 import { getUpcomingMovies } from "../api/tmdb-api";
 import PageTemplate from '../components/templateMovieListPage'
 import Spinner from '../components/spinner';
@@ -17,14 +17,12 @@ const UpcomingMoviesPage = (props) => {
 
   const movies = data.results;
 
-  const addToFavourites = () => null;
-
   return (
     <PageTemplate
       title='Upcoming Movies'
       movies={movies}
       action={(movie) => {
-        return <PlaylistAddIcon movie={movie} color="primary" />
+        return <AddToMustWatchIcon movie={movie} />
       }}
     />
   );
