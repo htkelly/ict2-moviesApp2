@@ -4,7 +4,6 @@ import { getMovie } from '../api/tmdb-api'
 import { useParams } from "react-router-dom";
 import MovieDetails from "../components/movieDetails";
 import PageTemplate from "../components/templateMoviePage";
-import useMovie from "../hooks/useMovie";
 import Spinner from '../components/spinner';
 
 const MovieDetailsPage = () => {
