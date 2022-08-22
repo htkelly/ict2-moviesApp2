@@ -47,6 +47,11 @@ export default function CastMemberCard({ actor }) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
+        <Link to={`/actors/${actor.id}`}>
+          <Button variant="outlined" size="medium" color="primary">
+            Bio...
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );
