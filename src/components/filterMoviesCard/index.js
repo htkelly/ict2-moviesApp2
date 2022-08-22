@@ -11,6 +11,8 @@ import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import { Box } from "@material-ui/core";
+import { Slider } from "@material-ui/core";
 import Spinner from '../spinner'
 
 const useStyles = makeStyles((theme) => ({
@@ -55,6 +57,57 @@ export default function FilterMoviesCard(props) {
     handleChange(e, "genre", e.target.value);
   };
 
+  const handleRatingChange = (e) => {
+    if (e.target.ariaValueNow) handleChange(e, "rating", e.target.ariaValueNow);
+  };
+
+  const marks = [
+    {
+      value: 0,
+      label: '0',
+    },
+    {
+      value: 1,
+      label: '1',
+    },
+    {
+      value: 2,
+      label: '2',
+    },
+    {
+      value: 3,
+      label: '3',
+    },
+    {
+      value: 4,
+      label: '4',
+    },
+    {
+      value: 5,
+      label: '5',
+    },
+    {
+      value: 6,
+      label: '6',
+    },
+    {
+      value: 7,
+      label: '7',
+    },
+    {
+      value: 8,
+      label: '8',
+    },
+    {
+      value: 9,
+      label: '9',
+    },
+    {
+      value: 10,
+      label: '10',
+    },
+  ];
+
   return (
     <>
     <Card className={classes.root} variant="outlined">
@@ -89,6 +142,20 @@ export default function FilterMoviesCard(props) {
             })}
           </Select>
         </FormControl>
+        <Box>
+          <Typography variant="button">
+              Minimum Average Rating
+          </Typography>
+          <Slider
+          defaultValue={props.ratingFilter}
+          step={0.1}
+          valueLabelDisplay="auto"
+          marks={marks}
+          min={0}
+          max={10}
+          onChange={handleRatingChange}
+          />
+        </Box>
       </CardContent>
     </Card>
     <Card className={classes.root} variant="outlined">

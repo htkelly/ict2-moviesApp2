@@ -24,6 +24,7 @@ function TvListPageTemplate({ tvShows, title, action }) {
   const classes = useStyles();
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
+  const [ratingFilter, setRatingFilter] = useState("0")
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const genreId = Number(genreFilter);
@@ -34,11 +35,15 @@ function TvListPageTemplate({ tvShows, title, action }) {
     })
     .filter((t) => {
       return genreId > 0 ? t.genre_ids.includes(genreId) : true;
+    })
+    .filter((t) => {
+        return t.vote_average >= ratingFilter;
     });
 
   const handleChange = (type, value) => {
     if (type === "name") setNameFilter(value);
-    else setGenreFilter(value);
+    else if (type === "genre") setGenreFilter(value);
+    else setRatingFilter(value);
   };
 
   return (
@@ -68,6 +73,7 @@ function TvListPageTemplate({ tvShows, title, action }) {
           onUserInput={handleChange}
           nameFilter={nameFilter}
           genreFilter={genreFilter}
+          ratingFilter={ratingFilter}
         />
       </Drawer>
     </>    
