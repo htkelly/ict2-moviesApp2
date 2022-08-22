@@ -13,6 +13,9 @@ import SiteHeader from './components/siteHeader';
 import MoviesContextProvider from "./contexts/moviesContext";
 import SimilarMoviesPage from "./pages/similarMoviesPage";
 import ActorDetailsPage from "./pages/actorDetailsPage";
+import DiscoverTvPage from "./pages/discoverTvPage";
+import FavouriteTvShowsPage from "./pages/favouriteTvShowsPage";
+import TvShowDetailsPage from "./pages/tvShowDetailsPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -40,6 +43,9 @@ const App = () => {
             <Route path="/reviews/:id" element={<MovieReviewPage/>} />
             <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
             <Route path="/actors/:id" element={<ActorDetailsPage/>} />
+            <Route path="/tv" element={<DiscoverTvPage/>} />
+            <Route path="/tv/favourites" element={<FavouriteTvShowsPage/>} />
+            <Route path="/tv/:id" element={<TvShowDetailsPage/>} />
           </Routes>
         </MoviesContextProvider>
       </BrowserRouter>
