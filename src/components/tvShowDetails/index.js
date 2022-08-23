@@ -67,9 +67,6 @@ const TvShowDetails = ( {tvShow}) => {
         />
         <Chip label={`First aired: ${tvShow.first_air_date}`} />
       </Paper>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3}}>
-        <TvShowCastList />
-      </Grid>
       </div>
     </>
   );
