@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import TvShowDetails from "../components/tvShowDetails";
 import TemplateTvShowPage from "../components/templateTvShowPage";
 import Spinner from '../components/spinner';
+import { Grid } from "@material-ui/core";
+import TvShowCastList from "../components/tvShowCastList";
 
 const TvShowDetailsPage = () => {
   const { id } = useParams();

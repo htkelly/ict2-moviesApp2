@@ -4,8 +4,6 @@ import Paper from "@material-ui/core/Paper";
 import StarRate from "@material-ui/icons/StarRate";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import TvShowCastList from "../tvShowCastList";
-import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   chipRoot: {
