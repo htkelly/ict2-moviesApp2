@@ -88,7 +88,7 @@ Full caching is used in the application, including for all paginated views
 
 + Discover movies (pagination support)
 + Movie details
-+ Movie cast lsit
++ Movie cast list
 + Discover TV shows (pagination support)
 + TV Show details
 + Tv Show cast list
