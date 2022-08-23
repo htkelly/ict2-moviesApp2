@@ -11,9 +11,9 @@ import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import { Box } from "@material-ui/core";
-import { Slider } from "@material-ui/core";
 import Spinner from '../spinner'
+import { Slider } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,7 +50,7 @@ export default function FilterMoviesCard(props) {
   };
 
   const handleTextChange = (e, props) => {
-    handleChange(e, "name", e.target.value);
+    handleChange(e, "title", e.target.value);
   };
 
   const handleGenreChange = (e) => {
