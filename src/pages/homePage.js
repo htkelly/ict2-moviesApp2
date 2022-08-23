@@ -8,7 +8,7 @@ import { Pagination } from "@material-ui/lab";
 
 const HomePage = (props) => {
   const [pageNumber, setPageNumber] = React.useState(1);
-  const {  data, error, isLoading, isError }  = useQuery('discover', getMovies);
+  const {  data, error, isLoading, isError }  = useQuery(['discover', {pageNumber: pageNumber}], getMovies);
   const handlePageChange = (e, value) => {
     setPageNumber(value);
   }
