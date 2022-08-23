@@ -17,6 +17,8 @@ import DiscoverTvPage from "./pages/discoverTvPage";
 import FavouriteTvShowsPage from "./pages/favouriteTvShowsPage";
 import TvShowDetailsPage from "./pages/tvShowDetailsPage";
 import MovieSearchPage from "./pages/movieSearchPage";
+import Login from "./components/login/login";
+import Register from "./components/register/register";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -48,6 +50,8 @@ const App = () => {
             <Route path="/tv" element={<DiscoverTvPage/>} />
             <Route path="/tv/favourites" element={<FavouriteTvShowsPage/>} />
             <Route path="/tv/:id" element={<TvShowDetailsPage/>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </MoviesContextProvider>
       </BrowserRouter>
