@@ -4,9 +4,14 @@ import AddToFavouritesIcon from '../components/cardIcons/addToFavourites';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import {getMovies} from '../api/tmdb-api';
+import { Pagination } from "@material-ui/lab";
 
 const HomePage = (props) => {
-  const {  data, error, isLoading, isError }  = useQuery('discover', getMovies)
+  const [pageNumber, setPageNumber] = React.useState(1);
+  const {  data, error, isLoading, isError }  = useQuery('discover', getMovies);
+  const handlePageChange = (e, value) => {
+    setPageNumber(value);
+  }
 
   if (isLoading) {
     return <Spinner />
@@ -22,6 +27,7 @@ const HomePage = (props) => {
   localStorage.setItem('favourites', JSON.stringify(favourites))
 
   return (
+    <>
     <PageTemplate
       title="Discover Movies"
       movies={movies}
@@ -29,6 +35,8 @@ const HomePage = (props) => {
         return <AddToFavouritesIcon movie={movie} />
       }}
     />
+    <Pagination count={500} variant="outlined" showFirstButton showLastButton page={pageNumber} onChange={handlePageChange}/>
+    </>
   );
 };
 
