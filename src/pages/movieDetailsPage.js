@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import MovieDetails from "../components/movieDetails";
 import PageTemplate from "../components/templateMoviePage";
 import Spinner from '../components/spinner';
+import { Grid } from "@material-ui/core";
+import CastList from "../components/castList";
 
 const MovieDetailsPage = () => {
   const { id } = useParams();
@@ -27,6 +29,9 @@ const MovieDetailsPage = () => {
         <>
           <PageTemplate movie={movie}>
             <MovieDetails movie={movie} />
+            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3}}>
+              <CastList />
+            </Grid>
           </PageTemplate>
         </>
       ) : (

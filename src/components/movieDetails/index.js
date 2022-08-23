@@ -6,13 +6,10 @@ import MonetizationIcon from "@material-ui/icons/MonetizationOn";
 import StarRate from "@material-ui/icons/StarRate";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-// New
 import NavigationIcon from "@material-ui/icons/Navigation";
 import Fab from "@material-ui/core/Fab";
 import Drawer from "@material-ui/core/Drawer";
 import MovieReviews from '../movieReviews';
-import CastList from "../castList";
-import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   chipRoot: {
@@ -80,9 +77,6 @@ const MovieDetails = ( {movie}) => {
         />
         <Chip label={`Released: ${movie.release_date}`} />
       </Paper>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3}}>
-        <CastList />
-      </Grid>
       </div>
       {/* New */}
       <Fab    
