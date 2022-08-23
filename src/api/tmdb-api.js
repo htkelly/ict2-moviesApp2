@@ -213,3 +213,20 @@ export const getUpcomingMovies = (args) => {
       throw error
    });
   };
+
+  export const searchMovies = (args) => {
+    const [, searchQueryPart] = args.queryKey;
+    const { searchQuery, pageNumber} = searchQueryPart;
+    console.log(searchQuery, pageNumber)
+        return fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&query=${searchQuery}"&page=${pageNumber}`
+    ).then((response) => {
+      if (!response.ok) {
+        throw new Error(response.json().message);
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      throw error
+   });
+  };
